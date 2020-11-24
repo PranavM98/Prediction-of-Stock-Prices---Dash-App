@@ -3,10 +3,10 @@ name: Dash Application with Github Actions
 on: [push]
 
 jobs:
-  build:
-
-    runs-on: ubuntu-latest
-
+  test:
+    name: Test - Unit & Integration
+    runs-on: ubuntu-18.04
+    
     steps:
     - uses: actions/checkout@v2
     - name: Install dependencies
@@ -15,3 +15,19 @@ jobs:
     - name: Lint with pylint
       run: |
         make lint
+
+  docker:
+    name: Publish - Docker Hub
+    runs-on: ubuntu-18.04
+    needs: [test]
+    env:
+      REPO: ${{ secrets.DOCKER_REPO }}
+    steps:
+
+      - name: Login to Docker Hub
+        run: docker login -u ${{ secrets.DOCKER_USER }} 
+             -p ${{ secrets.DOCKER_PASS }}
+      - name: Build Docker image
+        run: docker build -t $REPO:latest -t .
+      - name: Publish Docker image
+        run: docker push $REPO
