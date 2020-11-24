@@ -22,7 +22,7 @@ As shown in the Figure above, the application consists of 2 buttons. The "Refres
 ### Demo Videos
 
 1. Brief Overview of the Project - [Link to Demo](https://drive.google.com/file/d/1uxWshXVBdj62G-dhwnZKw5g6tcsZ3Ek5/view?usp=sharing)
-2. Detailed Walkthrough of the Project and Code - [Link to Demo](https://drive.google.com/file/d/1RCNpQmux6vWAo6AG6PHtotLsx13BMADJ/view?usp=sharing)
+2. Detailed Walkthrough of the Project, Code, and Live App Demo - [Link to Demo](https://drive.google.com/file/d/1RCNpQmux6vWAo6AG6PHtotLsx13BMADJ/view?usp=sharing)
 
 ## Continuous Integration and Continuous Deployment (CI/CD)
 
