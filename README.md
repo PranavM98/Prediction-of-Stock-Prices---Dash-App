@@ -1,8 +1,8 @@
 # Real Time Stock Prediction Dash Application
 
 Introduction
-![Application Front Page]<img width="1792" alt="Screen Shot 2020-11-24 at 5 27 46 AM" src="https://user-images.githubusercontent.com/30974949/100028858-d5238d80-2e15-11eb-8c30-efa063e22b09.png">
-
+<img width="1792" alt="Screen Shot 2020-11-24 at 5 27 46 AM" src="https://user-images.githubusercontent.com/30974949/100028858-d5238d80-2e15-11eb-8c30-efa063e22b09.png">
+<align="center">Application Front Page
 Welcome to the Real Time Stock Prediction Application. The main objective of this project is to predict the next minute of Amazon Stock Price based on the current stock price and the previous 150 observation. This project is extremely useful for those actively selling and buying stocks in a day.
 
 As shown in the Figure above, the application consists of 2 buttons. The "Refresh" button will automatically restart the application and extract the most current stock price from the S3 bucket. The "Predict" button will then run the prediction algorithm (SARIMAX Time Series Forecasting) and display the predictions on the Application.
