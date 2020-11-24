@@ -144,12 +144,12 @@ This phase consists of creating a Dash Application, storing the application in a
 
 As shown in the image above, the current price is $3100.18 (Inside Yellow Box). The model predicted that the next minute's Amazon stock price is $3099.48 (A decrease of $0.7 when compared to the current price)
 
-Creating the Docker Image:
+#### Creating the Docker Image:
 ```
 docker build --tag dashapp .
 ```
 
-Pushing the Docker Image to DockerHub
+#### Pushing the Docker Image to DockerHub
 ```
 docker login --username=pranavm98
 docker image ls
@@ -161,9 +161,9 @@ docker push pranavm98/dashapp
 Key Points to Note: 1) As the application accesses the s3 bucket on my AWS account, in order to run the program, the user must have my AWS login credentials. 2) The port used throughout this project is 8080. 3) If using AWS Cloud9, edit the inbound rules to include port 8080.
 
 
-How to Run the App
+## How to Run the App
 
-From DockerHub:
+### From DockerHub:
 
 1) Pull Docker Image from DockerHub
 ```
@@ -175,7 +175,7 @@ docker run -rm -e AWS_ACCESS_KEY_ID=************* -e AWS_SECRET_ACCESS_KEY=*****
 ```
 3) Open the URL!
 
-From Github:
+### From Github:
 
 1) Clone the repo
 ```
