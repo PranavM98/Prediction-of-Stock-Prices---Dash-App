@@ -29,8 +29,9 @@ Technologies Used:
 
 This project is broken down into 2 phases.
 
-Phase 1
-1) This phase consists of using Amazon DynamoDB, Amazon S3, Amazon CloudWatch and two Amazon Lambda functions.
+Phase 1 (Orange Box in Cloud Diagram)
+
+This phase consists of using Amazon DynamoDB, Amazon S3, Amazon CloudWatch and two Amazon Lambda functions.
 The first lambda function is triggered by a CloudWatch event which executes the function every minute from 9:30 am to 4 pm Monday - Friday (When the stock market is open). The lambda function scapes marketinsider.com for the stock price of Amazon, NASDAQ, S&P 50, and DowJones and stores this data in a DynamoDB table.
 
 The second lambda function is triggered by a DynamoDB event and is executed when there is an addition/reduction of data in/from the DynamoDB table. This lambda function fetches the data from DynamoDB and stores it in a S3 Bucket as a JSON format.
@@ -61,7 +62,7 @@ dynamoTable=dynamodb.Table('stocks_tables')
 
 def lambda_handler(event, context):
     
-    #cli.py contains a function named start1 which scrapes the web and a single row dataframe with the stock prices at that time.
+    #cli.py contains a function named start1 which scrapes the web and returns a single row dataframe with the stock prices at that time.
     df=cli.start1()
     
     #Storing data into local variables
@@ -130,9 +131,20 @@ def lambda_handler(event, context):
 ```
 
 
-Phase 2
-This phase consists of deploying the Dash Application on AWS Elastic Beanstalk. The application implements Continuous Deployment and Continuous Integration (CD / CI) with AWS Code Build and Github.
+Phase 2 (Blue box in Cloud Diagram)
 
+This phase consists of creating a Dash Application, storing the application in a Docker Image, and uploading the image to DockerHub. Below is a screenshot of the application after pressing the "Predict" Button.
+
+<img width="1792" alt="Screen Shot 2020-11-24 at 5 53 39 AM" src="https://user-images.githubusercontent.com/30974949/100030403-6ea06e80-2e19-11eb-9cb9-b7004597126e.png">
+
+
+
+
+
+
+Key Points to Note: 1) As the application accesses the s3 bucket on my AWS account, in order to run the program, the user must have my AWS login credentials. 2) The port used throughout the project is 8080.
 
 
 How to Run the App
+
+
