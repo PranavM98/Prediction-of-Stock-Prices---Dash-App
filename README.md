@@ -4,7 +4,7 @@
 <img width="1792" alt="Screen Shot 2020-11-24 at 5 27 46 AM" src="https://user-images.githubusercontent.com/30974949/100028858-d5238d80-2e15-11eb-8c30-efa063e22b09.png">
 
 
-Welcome to the Real Time Stock Prediction Application. The main objective of this project is to predict the next minute of Amazon Stock Price based on the current stock price and the previous 150 observation. This project is extremely useful for those actively selling and buying stocks in a day.
+Welcome to the Real Time Stock Prediction Application. The main objective of this project is to predict the next minute of Amazon Stock Price based on the current stock price and the previous 150 observations. This project is useful for those actively selling and buying stocks in a day.
 
 As shown in the Figure above, the application consists of 2 buttons. The "Refresh" button will automatically restart the application and extract the most current stock price from the S3 bucket. The "Predict" button will then run the prediction algorithm (SARIMAX Time Series Forecasting) and display the predictions on the Application.
 
@@ -140,18 +140,37 @@ This phase consists of creating a Dash Application, storing the application in a
 
 As shown in the image above, the current price is $3100.18 (Inside Yellow Box). The model predicted that the next minute's Amazon stock price is $3099.48 (A decrease of $0.7 when compared to the current price)
 
+Creating the Docker Image:
+```
+docker build --tag dashapp .
+```
+
+Pushing the Docker Image to DockerHub
+```
+docker login --username=pranavm98
+docker tag <Image ID> pranavm98/dashapp:final
+docker push pranavm98/dashapp
+```
+
 
 Key Points to Note: 1) As the application accesses the s3 bucket on my AWS account, in order to run the program, the user must have my AWS login credentials. 2) The port used throughout this project is 8080. 3) If using AWS Cloud9, edit the inbound rules to include port 8080.
 
 
 How to Run the App
 
+From DockerHub:
+
 1) Pull Docker Image from DockerHub
+```
 docker pull pranavm98/dashapp:final
-
+```
 2) Run the DockerImage
+```
 docker run -rm -e AWS_ACCESS_KEY_ID=************* -e AWS_SECRET_ACCESS_KEY=***************** -e DEFAULT_REGION_NAME=us-east-2 -p 8080:8080  pranavm98/dashapp:final
-
+```
 3) Open the URL!
 
+From Github:
 
+1) Clone the repo
+git clone
