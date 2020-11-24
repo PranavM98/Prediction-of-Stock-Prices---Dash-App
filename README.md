@@ -41,6 +41,61 @@ AWS Lambda Function 1:
 
 ```python
 
+import json
+import cli
+import pandas as pd
+import numpy as np
+from urllib.request import urlopen
+from bs4 import BeautifulSoup
+import boto3
+import time
+import csv
+import test
+import prediction
+import scrape
+import analysis
+
+dynamodb=boto3.resource('dynamodb')
+dynamoTable=dynamodb.Table('stocks_tables')
+
+
+def lambda_handler(event, context):
+    
+    #cli.py contains a function named start1 which scrapes the web and a single row dataframe with the stock prices at that time.
+    df=cli.start1()
+    
+    #Storing data into local variables
+    time_str=str(df.iloc[-1,4])
+    stock_price=str(df.iloc[-1,5])
+    company=str(df.iloc[-1,3])
+    sp=str(df.iloc[-1,0])
+    nd=str(df.iloc[-1,1])
+    dj=str(df.iloc[-1,2])
+    
+
+    #Appending the data into the DynamoDB table.
+    dynamoTable.put_item(
+        Item={
+        'Date_Time': time_str,
+        'Company':company,
+        'Stock Price':stock_price,
+        'S&P 50': sp,
+        'Nasdaq': nd,
+        'DowJones': dj
+        }
+        )
+    
+    #Used for logging. Not required
+    return {
+        'statusCode': 200,
+        'Date_Time': time_str,
+        'Company':company,
+        'Stock Price':stock_price,
+        'S&P 50': sp,
+        'Nasdaq': nd,
+        'DowJones': dj
+    }
+
 
 
 ```
@@ -48,8 +103,30 @@ AWS Lambda Function 2:
 
 ```python
 
+import json
+import boto3
+import os
+
+# Initializing the Services used
+
+s3=boto3.client('s3')
+ddb=boto3.resource('dynamodb')
+table=ddb.Table('stocks_tables')
+
+def lambda_handler(event, context):
 
 
+    #Scans the DynamoDB table
+    response=table.scan()
+    
+    #Body contains the table values/data
+    body=json.dumps(response['Items'])
+    
+    #s3.put_Object places the DynamoDB data into the s3 bucket
+    response=s3.put_object(Bucket='stocks-dump', Key='stocks-dump.json', Body=body,
+    ContentType='application/json')
+    
+    
 ```
 
 
