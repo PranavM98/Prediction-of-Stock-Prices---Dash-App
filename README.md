@@ -2,10 +2,11 @@
 
 ## Overview of ReadME
 1. Introduction
-2. CI and CD
-3. Cloud Diagram and Architecture
-4. Components of the Project
-5. How to Run the Application
+2. Demo Videos
+3. CI and CD
+4. Cloud Diagram and Architecture
+5. Components of the Project
+6. How to Run the Application
 
 I would like to thank Prof. Noah Gift for his constant support and help.
 
@@ -20,7 +21,7 @@ Welcome to the Real Time Stock Prediction Application. The main objective of thi
 
 As shown in the Figure above, the application consists of 2 buttons. The "Refresh" button will automatically restart the application and extract the most current stock price from the S3 bucket. The "Predict" button will then run the prediction algorithm (SARIMAX Time Series Forecasting) and display the predictions on the Application.
 
-### Demo Videos
+## Demo Videos
 
 1. Brief Overview of the Project - [Link to Demo](https://drive.google.com/file/d/1uxWshXVBdj62G-dhwnZKw5g6tcsZ3Ek5/view?usp=sharing)
 2. Detailed Walkthrough of the Project, Code, and Live App Demo - [Link to Demo](https://drive.google.com/file/d/1RCNpQmux6vWAo6AG6PHtotLsx13BMADJ/view?usp=sharing)
