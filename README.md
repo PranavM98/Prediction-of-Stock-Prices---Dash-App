@@ -1,6 +1,16 @@
-# Real Time Amazon Stock Prediction Dash Application - AWS 
+# Real Time Amazon Stock Prediction Dash Application - AWS - IDS 706 Final Project
+
+## Overview of ReadME
+1. Introduction
+2. CI and CD
+3. Cloud Diagram and Architecture
+4. Components of the Project
+5. How to Run the Application
 
 ## Introduction
+
+I would like to thank Prof. Noah Gift for his constant support and help.
+
 ![Stock Prediction Dash Application](https://user-images.githubusercontent.com/30974949/100032921-15d3d480-2e1f-11eb-8eaa-5d5fdd3f23ad.png)
 
 
@@ -20,7 +30,7 @@ As shown in the Figure above, the application consists of 2 buttons. The "Refres
 
 This project uses CI and CD through GitHub Actions. CI is done by Make Install and Make Lint which automatically ensures the updated code has no errors. Once it successfully passses the Make Install and Make Lint phase, CD takes place where it automatically builds the new Docker Container (Image) and pushes it to Dockerhub. I have provided my Dockerhub Credentials to the repo using Github Secrets.
 
-## Cloud Diagram
+## Cloud Diagram and Architecture
 
 <img width="1792" alt="Screen Shot 2020-11-24 at 5 31 47 AM" src="https://user-images.githubusercontent.com/30974949/100029065-63980f00-2e16-11eb-9f62-0ffa0160f664.png">
 
