@@ -32,9 +32,9 @@ This project is broken down into 2 phases.
 Phase 1 (Orange Box in Cloud Diagram)
 
 This phase consists of using Amazon DynamoDB, Amazon S3, Amazon CloudWatch and two Amazon Lambda functions.
-The first lambda function is triggered by a CloudWatch event which executes the function every minute from 9:30 am to 4 pm Monday - Friday (When the stock market is open). The lambda function scapes marketinsider.com for the stock price of Amazon, NASDAQ, S&P 50, and DowJones and stores this data in a DynamoDB table.
+The first lambda function (AWS Lambda Function 1) is triggered by a CloudWatch event which executes the function every minute from 9:30 am to 4 pm Monday - Friday (When the stock market is open). The lambda function scapes marketinsider.com for the stock price of Amazon, NASDAQ, S&P 50, & DowJones, formats the data into a Pandas DataFrame, and stores this data in a DynamoDB table.
 
-The second lambda function is triggered by a DynamoDB event and is executed when there is an addition/reduction of data in/from the DynamoDB table. This lambda function fetches the data from DynamoDB and stores it in a S3 Bucket as a JSON format.
+The second lambda function (AWS Lambda Function 2) is triggered by a DynamoDB event and is executed when there is an addition/reduction of data in/from the DynamoDB table. This lambda function fetches the data from DynamoDB and stores it in a S3 Bucket as a JSON format.
 
 As both lambda functions are interconnected, new data will be updated every minute and stored into the DynamoDB as well as the S3 bucket.
 
