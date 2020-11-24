@@ -174,4 +174,18 @@ docker run -rm -e AWS_ACCESS_KEY_ID=************* -e AWS_SECRET_ACCESS_KEY=*****
 From Github:
 
 1) Clone the repo
-git clone
+```
+git clone https://github.com/PranavM98/Stock-Dash.git
+```
+2) Install the required packages
+```
+make install
+```
+3) Enable AWS configurations
+```
+aws configure
+```
+4) Run the application
+```
+python application.py
+```
