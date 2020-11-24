@@ -9,6 +9,11 @@ Welcome to the Real Time Stock Prediction Application. The main objective of thi
 
 As shown in the Figure above, the application consists of 2 buttons. The "Refresh" button will automatically restart the application and extract the most current stock price from the S3 bucket. The "Predict" button will then run the prediction algorithm (SARIMAX Time Series Forecasting) and display the predictions on the Application.
 
+### Demo Videos
+
+1. Brief Overview of the Project - [Link to Demo](https://drive.google.com/file/d/1uxWshXVBdj62G-dhwnZKw5g6tcsZ3Ek5/view?usp=sharing)
+2. Detailed Walkthrough of the Project and Code - [Link to Demo](https://drive.google.com/file/d/1RCNpQmux6vWAo6AG6PHtotLsx13BMADJ/view?usp=sharing)
+
 ## Continuous Integration and Continuous Deployment (CI/CD)
 
 <img width="1169" alt="Screen Shot 2020-11-24 at 3 21 15 PM" src="https://user-images.githubusercontent.com/30974949/100077813-cf0acc80-2e68-11eb-825f-5e058f77a286.png">
@@ -162,6 +167,9 @@ docker push pranavm98/dashapp
 
 Key Points to Note: 1) As the application accesses the s3 bucket on my AWS account, in order to run the program, the user must have my AWS login credentials. 2) The port used throughout this project is 8080. 3) If using AWS Cloud9, edit the inbound rules to include port 8080.
 
+## Components of the Project
+
+<img width="1169" alt="Screen Shot 2020-11-24 at 3 25 45 PM" src="https://user-images.githubusercontent.com/30974949/100078382-78ea5900-2e69-11eb-8253-6d04efdccf99.png">
 
 ## How to Run the App
 
@@ -195,3 +203,4 @@ aws configure
 ```
 python application.py
 ```
+
