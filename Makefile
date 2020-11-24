@@ -10,4 +10,4 @@ lint:
 	hadolint Dockerfile 
 	pylint --disable=R,C,W1203 application.py
 
-all: install lint
+all: setup install lint
