@@ -9,6 +9,9 @@ Welcome to the Real Time Stock Prediction Application. The main objective of thi
 
 As shown in the Figure above, the application consists of 2 buttons. The "Refresh" button will automatically restart the application and extract the most current stock price from the S3 bucket. The "Predict" button will then run the prediction algorithm (SARIMAX Time Series Forecasting) and display the predictions on the Application.
 
+### This github repo also uses Github Actions for Continuous Integration as shown in the image below. 
+
+<img width="1792" alt="Screen Shot 2020-11-24 at 1 17 55 PM" src="https://user-images.githubusercontent.com/30974949/100063737-a6c6a200-2e57-11eb-8355-151d5ea3524c.png">
 
 ## Cloud Diagram
 
