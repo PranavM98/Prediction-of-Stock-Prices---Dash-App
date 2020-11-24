@@ -5,4 +5,5 @@ statsmodels
 boto3
 plotly
 matplotlib
+pylint
 awscli
