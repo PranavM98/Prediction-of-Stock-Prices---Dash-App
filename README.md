@@ -7,9 +7,10 @@
 4. Components of the Project
 5. How to Run the Application
 
+I would like to thank Prof. Noah Gift for his constant support and help.
+
 ## Introduction
 
-I would like to thank Prof. Noah Gift for his constant support and help.
 
 ![Stock Prediction Dash Application](https://user-images.githubusercontent.com/30974949/100032921-15d3d480-2e1f-11eb-8eaa-5d5fdd3f23ad.png)
 
