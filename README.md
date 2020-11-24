@@ -138,13 +138,20 @@ This phase consists of creating a Dash Application, storing the application in a
 <img width="1792" alt="Screen Shot 2020-11-24 at 5 53 39 AM" src="https://user-images.githubusercontent.com/30974949/100030403-6ea06e80-2e19-11eb-9cb9-b7004597126e.png">
 
 
+As shown in the image above, the current price is $3100.18 (Inside Yellow Box). The model predicted that the next minute's Amazon stock price is $3099.48 (A decrease of $0.7 when compared to the current price)
 
 
-
-
-Key Points to Note: 1) As the application accesses the s3 bucket on my AWS account, in order to run the program, the user must have my AWS login credentials. 2) The port used throughout the project is 8080.
+Key Points to Note: 1) As the application accesses the s3 bucket on my AWS account, in order to run the program, the user must have my AWS login credentials. 2) The port used throughout this project is 8080. 3) If using AWS Cloud9, edit the inbound rules to include port 8080.
 
 
 How to Run the App
+
+1) Pull Docker Image from DockerHub
+docker pull pranavm98/dashapp:final
+
+2) Run the DockerImage
+docker run -rm -e AWS_ACCESS_KEY_ID=************* -e AWS_SECRET_ACCESS_KEY=***************** -e DEFAULT_REGION_NAME=us-east-2 -p 8080:8080  pranavm98/dashapp:final
+
+3) Open the URL!
 
 
