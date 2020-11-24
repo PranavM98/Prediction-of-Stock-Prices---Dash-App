@@ -30,7 +30,7 @@ Technologies Used:
 
 This project is broken down into 2 phases.
 
-Phase 1 (Orange Box in Cloud Diagram)
+### Phase 1 (Orange Box in Cloud Diagram)
 
 This phase consists of using Amazon DynamoDB, Amazon S3, Amazon CloudWatch and two Amazon Lambda functions.
 The first lambda function (AWS Lambda Function 1) is triggered by a CloudWatch event which executes the function every minute from 9:30 am to 4 pm Monday - Friday (When the stock market is open). The lambda function scapes marketinsider.com for the stock price of Amazon, NASDAQ, S&P 50, & DowJones, formats the data into a Pandas DataFrame, and stores this data in a DynamoDB table.
@@ -39,7 +39,7 @@ The second lambda function (AWS Lambda Function 2) is triggered by a DynamoDB ev
 
 As both lambda functions are interconnected, new data will be updated every minute and stored into the DynamoDB as well as the S3 bucket.
 
-AWS Lambda Function 1:
+#### AWS Lambda Function 1:
 
 ```python
 
@@ -101,7 +101,7 @@ def lambda_handler(event, context):
 
 
 ```
-AWS Lambda Function 2:
+#### AWS Lambda Function 2:
 
 ```python
 
@@ -132,7 +132,7 @@ def lambda_handler(event, context):
 ```
 
 
-Phase 2 (Blue box in Cloud Diagram)
+### Phase 2 (Blue box in Cloud Diagram)
 
 This phase consists of creating a Dash Application, storing the application in a Docker Image, and uploading the image to DockerHub. Below is a screenshot of the application after pressing the "Predict" Button.
 
@@ -149,7 +149,8 @@ docker build --tag dashapp .
 Pushing the Docker Image to DockerHub
 ```
 docker login --username=pranavm98
-docker tag <Image ID> pranavm98/dashapp:final
+docker image ls
+docker tag <Image ID> pranavm98/dashapp:<tag name>
 docker push pranavm98/dashapp
 ```
 
