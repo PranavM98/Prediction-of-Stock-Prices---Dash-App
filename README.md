@@ -9,9 +9,9 @@ Welcome to the Real Time Stock Prediction Application. The main objective of thi
 
 As shown in the Figure above, the application consists of 2 buttons. The "Refresh" button will automatically restart the application and extract the most current stock price from the S3 bucket. The "Predict" button will then run the prediction algorithm (SARIMAX Time Series Forecasting) and display the predictions on the Application.
 
-### This github repo also uses Github Actions for Continuous Integration as shown in the image below. 
+### Continuous Integration and Continuous Deployment (CI/CD)
 
-<img width="1792" alt="Screen Shot 2020-11-24 at 1 17 55 PM" src="https://user-images.githubusercontent.com/30974949/100063737-a6c6a200-2e57-11eb-8355-151d5ea3524c.png">
+
 
 ## Cloud Diagram
 
@@ -27,7 +27,7 @@ AWS Cloud Services Used:
 Technologies Used:
 1. Dash Plotly Application - Python
 2. CSS Styling
-3. Github
+3. Github and Github Actions
 4. Docker and DockerHub
 
 
@@ -169,7 +169,7 @@ Key Points to Note: 1) As the application accesses the s3 bucket on my AWS accou
 ```
 docker pull pranavm98/dashapp:final
 ```
-2) Run the DockerImage
+2) Run the DockerImage. 
 ```
 docker run -rm -e AWS_ACCESS_KEY_ID=************* -e AWS_SECRET_ACCESS_KEY=***************** -e DEFAULT_REGION_NAME=us-east-2 -p 8080:8080  pranavm98/dashapp:final
 ```
@@ -179,7 +179,7 @@ docker run -rm -e AWS_ACCESS_KEY_ID=************* -e AWS_SECRET_ACCESS_KEY=*****
 
 1) Clone the repo
 ```
-git clone https://github.com/PranavM98/Stock-Dash.git
+git clone https://github.com/PranavM98/Prediction-of-Stock-Prices---Dash-App.git
 ```
 2) Install the required packages
 ```
