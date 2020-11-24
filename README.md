@@ -9,9 +9,11 @@ Welcome to the Real Time Stock Prediction Application. The main objective of thi
 
 As shown in the Figure above, the application consists of 2 buttons. The "Refresh" button will automatically restart the application and extract the most current stock price from the S3 bucket. The "Predict" button will then run the prediction algorithm (SARIMAX Time Series Forecasting) and display the predictions on the Application.
 
-### Continuous Integration and Continuous Deployment (CI/CD)
+## Continuous Integration and Continuous Deployment (CI/CD)
 
+<img width="1169" alt="Screen Shot 2020-11-24 at 3 21 15 PM" src="https://user-images.githubusercontent.com/30974949/100077813-cf0acc80-2e68-11eb-825f-5e058f77a286.png">
 
+This project uses CI and CD through GitHub Actions. CI is done by Make Install and Make Lint which automatically ensures the updated code has no errors. Once it successfully passses the Make Install and Make Lint phase, CD takes place where it automatically builds the new Docker Container (Image) and pushes it to Dockerhub. I have provided my Dockerhub Credentials to the repo using Github Secrets.
 
 ## Cloud Diagram
 
