@@ -1,7 +1,8 @@
-# Real Time Stock Prediction Dash Application - AWS 
+# Real Time Amazon Stock Prediction Dash Application - AWS 
 
 ## Introduction
-<img width="1792" alt="Screen Shot 2020-11-24 at 5 27 46 AM" src="https://user-images.githubusercontent.com/30974949/100028858-d5238d80-2e15-11eb-8c30-efa063e22b09.png">
+![Stock Prediction Dash Application](https://user-images.githubusercontent.com/30974949/100032921-15d3d480-2e1f-11eb-8eaa-5d5fdd3f23ad.png)
+
 
 
 Welcome to the Real Time Stock Prediction Application. The main objective of this project is to predict the next minute of Amazon Stock Price based on the current stock price and the previous 150 observations. This project is useful for those actively selling and buying stocks in a day.
