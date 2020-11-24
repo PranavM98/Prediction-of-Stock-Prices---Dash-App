@@ -7,6 +7,7 @@
 4. Cloud Diagram and Architecture
 5. Components of the Project
 6. How to Run the Application
+7. Future Work
 
 I would like to thank Prof. Noah Gift for his constant support and help.
 
@@ -216,3 +217,6 @@ aws configure
 python application.py
 ```
 
+## Future Work
+
+I next plan to deploy the Dash Application on Elastic Beanstalk and perform CD using AWS CodeBuild.
